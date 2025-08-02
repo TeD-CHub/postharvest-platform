@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Postharvest Management</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <h1>Smart Postharvest Management Platform</h1>
+    <p class="tagline">Reducing food loss through knowledge and tech</p>
+  </header>
+
+  <section class="intro">
+    <h2>Why This Matters</h2>
+    <p>In Kenya, postharvest losses cost farmers millions each year. This platform offers digital solutions to help reduce waste, improve profits, and ensure food security.</p>
+  </section>
+
+  <section class="features">
+    <h2>Platform Features</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3 class="feature-icon-title">Real-time Tips</h3>
+        <p>Get timely handling, drying, and storage recommendations to avoid spoilage.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-icon-title">Data Collection</h3>
+        <p>Monitor and record loss data to track improvements over time.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-icon-title">Maintenance Alerts</h3>
+        <p>Receive alerts on equipment maintenance and calibration needs.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-icon-title">Market Integration</h3>
+        <p>Find ready markets to reduce the time food stays in storage.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-icon-title">Training Content</h3>
+        <p>Access bite-sized content on how to preserve quality after harvest.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-icon-title">Analytics</h3>
+        <p>Visualize trends in losses to guide smarter interventions.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-icon-title">Risk Warnings</h3>
+        <p>Get alerts based on weather and storage conditions to prevent spoilage.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-icon-title">Community Forum</h3>
+        <p>Connect with other farmers, share tips, and learn from peers.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-icon-title">Library</h3>
+        <p>Browse manuals and case studies tailored to Kenyan crops.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature-icon-title">Events Calendar</h3>
+        <p>See upcoming training events and postharvest solution expos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="calculator">
+    <h2>Loss Calculator</h2>
+    <form id="lossCalculatorForm">
+      <input type="number" id="totalProduce" placeholder="Total produce (e.g., in kg)" required>
+      <input type="number" id="lossPercent" placeholder="Loss percentage (%)" required>
+      <button type="submit">Calculate Loss</button>
+    </form>
+    <div id="lossResult"></div>
+  </section>
+
+  <section class="call-to-action">
+    <h2>Join the Fight Against Food Loss</h2>
+    <p>Let’s build a more resilient and sustainable food system together.</p>
+    <a href="#contact" class="cta-button">Get Involved</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Web Weavers. All rights reserved.</p>
+    <p>Crafted with Passion, Rooted in Kenya</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("lossCalculatorForm");
+      const result = document.getElementById("lossResult");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const totalProduce = parseFloat(document.getElementById("totalProduce").value);
+        const lossPercent = parseFloat(document.getElementById("lossPercent").value);
+
+        if (isNaN(totalProduce) || isNaN(lossPercent)) {
+          result.textContent = "Please enter valid numbers.";
+          return;
+        }
+
+        const lossAmount = (totalProduce * lossPercent) / 100;
+        const remaining = totalProduce - lossAmount;
+
+        result.innerHTML = `
+          <p><strong>Loss Amount:</strong> ${lossAmount.toFixed(2)} units</p>
+          <p><strong>Remaining After Loss:</strong> ${remaining.toFixed(2)} units</p>
+        `;
+      });
+    });
+  </script>
+</body>
+</html>

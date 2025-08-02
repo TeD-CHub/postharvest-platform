@@ -1,0 +1,187 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background-color: #f4f9f4;
+  color: #1c1c1c;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  background-color: #29AB87; /* Jungle Green */
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Sections */
+.intro,
+.calculator,
+.call-to-action {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.intro h2,
+.calculator h2,
+.call-to-action h2 {
+  color: #29AB87; /* Jungle Green */
+  margin-bottom: 15px;
+}
+
+.features {
+  background-color: #d8f3dc;
+  padding: 40px 20px;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #29AB87; /* Jungle Green */
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.feature {
+  background: #ffffff;
+  border-left: 6px solid #29AB87; /* Jungle Green */
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.feature:hover {
+  transform: scale(1.03);
+}
+
+.feature::before {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 1.5rem;
+  color: #29AB87; /* Jungle Green */
+}
+
+.feature-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+  color: #29AB87; /* Jungle Green */
+}
+
+/* Calculator */
+.calculator form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.calculator input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.calculator button {
+  background-color: #29AB87; /* Jungle Green */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.calculator button:hover {
+  background-color: #1f8b6e; /* Darker Jungle Green */
+}
+
+#lossResult {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #29AB87; /* Jungle Green */
+}
+
+/* Call to Action */
+.call-to-action {
+  background-color: #29AB87; /* Jungle Green */
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.call-to-action h2 {
+  margin-bottom: 15px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 15px;
+  background: #ffffff;
+  color: #29AB87; /* Jungle Green */
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #d8f3dc;
+}
+
+/* Footer */
+footer {
+  background-color: #29AB87; /* Jungle Green */
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator form {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
